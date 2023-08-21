@@ -30,3 +30,18 @@
     font-size: 0.875rem;
     font-weight: 700;
 }
+
+@media screen and (min-width: 1024px) {
+    .topicos__titulo{
+        font-size: 1.5rem;
+    }
+    .topicos__lista__item__links{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .topicos{
+        padding: 3em 30vw;
+    }
+}

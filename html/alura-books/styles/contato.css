@@ -35,3 +35,29 @@
     font-family: var(--fonte-principal);
     color: var(--azul);
 }
+
+@media screen and (min-width: 1024px) {
+    .contato{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contato_descricao{
+        margin-right: 1em;
+        width: 30%;
+    }
+    .contato__titulo{
+        font-size: 1.5rem;
+    }
+    .contato__email{
+        width: 30%;
+    }
+
+    
+}
+
+@media screen and (min-width: 1728px) {
+    .contato{
+        padding: 3em 20vw;
+    }
+}

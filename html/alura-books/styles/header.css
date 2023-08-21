@@ -7,6 +7,15 @@
     display: inline-block;
 }
 
+.container__botao:checked ~ .container__label > .cabeçalho__menu-hamburguer{
+    background-image: url("../img/Menu\ Aberto.svg");
+
+} 
+
+.container__botao:checked ~ .container__label{
+    background: var(--azul-degrade);
+}
+
 .cabeçalho {
     background-color: var(--branco);
     display: flex;
@@ -22,6 +31,10 @@
 
 .container__imagem {
     padding: 1em;
+}
+
+.container__titulo{
+    display: none;
 }
 
 .lista-menu {
@@ -56,4 +69,88 @@
 
 .container__botao {
     display: none;
+}
+
+.opcoes{
+    display: none;
+}
+
+.container__texto{
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .cabeçalho__menu-hamburguer{
+        display: none;
+    }
+
+    .container__titulo, .container__titulo--negrito {
+        font-family: var(--fonte-segundaria);
+        font-size: 30px;
+    }
+
+    .container__titulo{
+        display: block;
+        font-weight: 400;
+    }
+    .container__titulo--negrito{
+        font-weight: 700;
+    }
+
+    .opcoes{
+        display: flex;
+    }
+
+    .opcoes__lista {
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+    .opcoes__link {
+        text-decoration: none;
+        color: black;
+    }
+    .opcoes__botao{
+        display: none;
+    }
+    .opcoes__botao:checked~.lista-menu{
+        display: block;
+        width: auto;
+    }
+    .opcoes__botao:checked~.opcoes__label>.opcoes__lista{
+        background: var(--azul-degrade);
+        color: white;
+    }
+    .opcoes__lista{
+        padding: 2em 1em;
+    }
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+    .lista-menu__item:hover> .lista-menu__link{
+        -webkit-text-fill-color: white;
+        text-decoration: none;
+    }
+
+    .container__imagem--transparet{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .container__link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+    }
+    .container__texto{
+        display: block;
+    }
+    .cabeçalho{
+        padding: 0 2em;
+    }
+    .opcoes{
+        margin-right: auto;
+    }
 }
