@@ -1,8 +1,11 @@
 // Meu Jeito
 
-function tocarSom(instrumento){
+function tocarSom(seletorAudio){
 
-    document.querySelector(`#som_${instrumento}`).play();
+    const elemento = document.querySelector(seletorAudio);
+
+    if(elemento != null && elemento.localName === 'audio') elemento.play();
+    else alert("Elemento não encontrado!");
 
 }
 
@@ -11,7 +14,7 @@ const listaDeTeclas = document.querySelectorAll('.tecla')
 listaDeTeclas.forEach(element => {
     element.onclick = function(){
         classeDoBotao = element.classList[1];
-        tocarSom(classeDoBotao);
+        tocarSom(`#som_${classeDoBotao}`);
     }
     element.onkeydown =  function (evento){
         if(evento.code === "Enter" || evento.code === "Space")
