@@ -13,29 +13,12 @@ listaDeTeclas.forEach(element => {
         classeDoBotao = element.classList[1];
         tocarSom(classeDoBotao);
     }
-});
-
-
-/*
-
-// Jeito Alura 
-function tocarSom(butaoPressionado){
-    document.querySelector('#som_'+classeTeclaApertada[1]).play();
-}
-
-contador = 0
-
-const listaDeTeclas = document.querySelectorAll('.tecla');
-
-while(contador < listaDeTeclas.length){
-
-    const instrumento = listaDeTeclas[contador].classList[1];
-    const idAudio = `#som_${instrumento}`
-    listaDeTeclas[contador].onclick = function () {
-        tocarSom('idAudio');
+    element.onkeydown =  function (evento){
+        if(evento.code === "Enter" || evento.code === "Space")
+            element.classList.add('ativa');
     }
-
-    contador += 1 ;
-}
-
-*/
+    element.onkeyup = function(evento){
+        if(evento.code === "Enter" || evento.code === "Space")
+            element.classList.remove('ativa')
+    }
+});
